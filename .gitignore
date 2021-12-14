@@ -1,3 +1,5 @@
-/.vim/bundle/*
-!/.vim/bundle/neobundle.vim
+/dein/repos/*
+/dein/cache_vi
+/dein/state_vi.vim
+/dein/.cache
 .DS_Store
