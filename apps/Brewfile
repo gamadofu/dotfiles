@@ -11,14 +11,17 @@ brew 'zsh-completions'
 brew 'neovim'
 
 cask 'google-chrome'
+cask 'google-drive'
+cask 'iterm2'
 cask 'google-japanese-ime'
 cask 'karabiner-elements'
 cask 'dropbox'
 cask 'kindle'
 cask 'iterm2'
 cask 'skitch'
-cask 'unity'
+cask 'unity-hub'
 cask 'blender'
+cask 'drawio'
 
 # App Store applications
 # mas signin
