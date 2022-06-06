@@ -1,5 +1,5 @@
 [user]
-  name = gamasuke
+  name = gamadofu
 	email = mamedrix@gmail.com
 [color]
   # colorの設定(以下のコマンドは自動で色つける)
@@ -57,3 +57,5 @@
   gn = grep -n
 [init]
   defaultBranch = main
+[pull]
+	rebase = false

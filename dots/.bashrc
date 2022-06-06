@@ -147,3 +147,6 @@ eval "$(goenv init -)"
 eval "$(anyenv init -)"
 export PATH="$HOME/.anyenv/envs/nodenv/bin:$PATH"
 
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+export DOCKER_HOST=unix://$HOME/.lima/sock/docker.sock

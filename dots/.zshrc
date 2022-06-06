@@ -28,12 +28,19 @@ setopt print_eight_bit
 #    履歴
 # ----------
 export HISTFILE=~/.zsh_history
-export HISTSIZE=1000
+export HISTSIZE=10000
 export SAVEHIST=10000
+# メモリに保存される履歴の件数
+export HISTSIZE=1000
 
-##  直前の重複を記録しない
+# 履歴ファイルに保存される履歴の件数
+export SAVEHIST=100000
+
+# 重複を記録しない
 setopt hist_ignore_dups
-#source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+# 開始と終了を記録
+setopt EXTENDED_HISTORY
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -45,3 +52,18 @@ setopt hist_ignore_dups
 alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+export CLICOLOR=1
+export TERM=xterm-256color
+
+#export DOCKER_HOST=unix://$HOME/.lima/docker/sock/docker.sock
+
+eval "$(rbenv init -)"
+export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+
+# postgres dir
+export PGDATA="$HOMEBREW_REPOSITORY/var/postgres"
+

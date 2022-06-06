@@ -43,3 +43,4 @@ do
     echo "ln -s ${file} ${home_dir}"
   fi
 done
+ln -s ${home_dir}/dotfiles/dein ${home_dir}

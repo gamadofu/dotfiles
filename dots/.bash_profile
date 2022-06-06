@@ -30,3 +30,5 @@ export PATH=/Users/yajima/Library/Android/sdk/platform-tools:$PATH
 
 export PATH=$PATH:/Applications/"Android Studio.app"/Contents/jre/Contents/Home/bin
 export JAVA_HOME=/Applications/"Android Studio.app"/Contents/jre/Contents/Home
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
