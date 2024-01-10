@@ -7,7 +7,8 @@ fi
 
 # 環境変数
 export LANG=ja_JP.UTF-8
-
+autoload -Uz colors && colors
+source $(brew --prefix)/opt/zsh-git-prompt/zshrc.sh
 # ----------
 #    補完
 # ----------
@@ -64,6 +65,35 @@ eval "$(rbenv init -)"
 export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  autoload -Uz compinit && compinit
+fi
+#PROMPT="%n ($(arch)):%~"$'\n'"%# "
+
 # postgres dir
 export PGDATA="$HOMEBREW_REPOSITORY/var/postgres"
+# asdf
+ . /opt/Homebrew/opt/asdf/libexec/asdf.sh
 
+# Android
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$PATH"
+export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
+# java
+export JAVA_HOME=`/usr/libexec/java_home -v "19.0.2"`
+export PATH="$JAVA_HOME/bin:$PATH"
+# flutter pub
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+# php
+export PATH="/opt/homebrew/opt/php@8.0/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@8.0/sbin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/yajima/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
