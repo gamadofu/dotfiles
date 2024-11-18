@@ -4,6 +4,7 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+export PATH=$PATH:/usr/bin
 
 # 環境変数
 export LANG=ja_JP.UTF-8
@@ -50,6 +51,7 @@ setopt EXTENDED_HISTORY
   export PATH=${HOME}/.rbenv/bin:${PATH} && \
   eval "$(rbenv init -)"
 
+alias python="python3"
 alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
@@ -97,3 +99,27 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@1.1/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@1.1/lib/pkgconfig"
+
+export DISABLE_SPRING=true
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+PATH=~/.console-ninja/.bin:$PATH
+
+git_prompt() {
+  if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = true ]; then
+    PROMPT="%F{047}%n%f:%F{009}%~%f $(git_super_status)"$'\n'"%# "
+  else
+    PROMPT="%F{047}%n%f:%F{009}%~%f "$'\n'"%# "
+  fi
+}
+
+precmd() {
+  git_prompt
+}
+autoload -Uz colors && colors
+PROMPT="%F{047}%n%f:%F{009}%~%f $(git_super_status)"$'\n'"%# "
+
+PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"

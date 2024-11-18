@@ -95,11 +95,36 @@ inoremap (<Enter> ()<Left><CR><ESC><S-o>
 inoremap ' ''<LEFT>
 inoremap " ""<LEFT>
 
-"===== dein.vim =====
-if filereadable(expand('~/dein/load.vim'))
-  source ~/dein/load.vim
+" dein-> jetpac 移行 ===== dein.vim =====
+""if filereadable(expand('~/dein/load.vim'))
+""  source ~/dein/load.vim
+""endif
+" cmd :JetpackSync
+let s:jetpackfile = expand('<sfile>:p:h') .. '/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim'
+let s:jetpackurl = "https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim"
+if !filereadable(s:jetpackfile)
+  call system(printf('curl -fsSLo %s --create-dirs %s', s:jetpackfile, s:jetpackurl))
 endif
+packadd vim-jetpack
+call jetpack#begin()
+Jetpack 'tani/vim-jetpack', {'opt': 1} " bootstrap
+Jetpack 'tpope/vim-fugitive'
+Jetpack 'itchyny/lightline.vim'
+Jetpack 'tikhomirov/vim-glsl'
+Jetpack 'pangloss/vim-javascript'
+Jetpack 'maxmellon/vim-jsx-pretty'
+Jetpack 'alampros/vim-styled-jsx'
+Jetpack 'othree/yajs.vim'
+Jetpack 'othree/es.next.syntax.vim'
+Jetpack 'leafgarland/typescript-vim'
+Jetpack 'tomasr/molokai'
+Jetpack 'NLKNguyen/papercolor-theme'
+Jetpack 'arzg/vim-colors-xcode'
+Jetpack 'ghifarit53/tokyonight-vim'
+Jetpack 'neoclide/coc.nvim', {'branch': 'release'}
+Jetpack 'posva/vim-vue'
 
+call jetpack#end()
 " Color
 set t_Co=256
 set t_Sf=^[[3%dm
@@ -121,3 +146,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+
+autocmd BufRead,BufNewFile *.es6 set filetype=javascript
+autocmd BufRead,BufNewFile *.js set filetype=javascript
