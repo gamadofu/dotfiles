@@ -96,6 +96,7 @@ inoremap ' ''<LEFT>
 inoremap " ""<LEFT>
 
 " dein-> jetpac 移行 ===== dein.vim =====
+" 初回 curl -fLo ~/.vim/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim --create-dirs https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim"
 ""if filereadable(expand('~/dein/load.vim'))
 ""  source ~/dein/load.vim
 ""endif

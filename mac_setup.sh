@@ -22,3 +22,5 @@ brew bundle
 #dock
 #省エネ スリープ時間
 #キーボード ショートカット sptllight検索 off
+
+defaults write -g com.apple.trackpad.scaling 20

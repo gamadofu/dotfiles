@@ -152,3 +152,5 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 export DOCKER_HOST=unix://$HOME/.lima/sock/docker.sock
 
 PATH=~/.console-ninja/.bin:$PATH
+# Shopify Hydrogen alias to local projects
+alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'

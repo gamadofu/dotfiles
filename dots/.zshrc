@@ -1,13 +1,14 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
 export PATH=$PATH:/usr/bin
 
 # 環境変数
 export LANG=ja_JP.UTF-8
+export LC_ALL=ja_JP.UTF-8
 autoload -Uz colors && colors
 source $(brew --prefix)/opt/zsh-git-prompt/zshrc.sh
 # ----------
@@ -45,7 +46,7 @@ setopt hist_ignore_dups
 setopt EXTENDED_HISTORY
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [[ -d ~/.rbenv  ]] && \
   export PATH=${HOME}/.rbenv/bin:${PATH} && \
@@ -76,16 +77,14 @@ fi
 
 # postgres dir
 export PGDATA="$HOMEBREW_REPOSITORY/var/postgres"
-# asdf
- . /opt/Homebrew/opt/asdf/libexec/asdf.sh
 
 # Android
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$PATH"
 export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
 # java
-export JAVA_HOME=`/usr/libexec/java_home -v "19.0.2"`
-export PATH="$JAVA_HOME/bin:$PATH"
+#export JAVA_HOME=`/usr/libexec/java_home -v "19.0.2"`
+#export PATH="$JAVA_HOME/bin:$PATH"
 # flutter pub
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 # php
@@ -123,3 +122,16 @@ autoload -Uz colors && colors
 PROMPT="%F{047}%n%f:%F{009}%~%f $(git_super_status)"$'\n'"%# "
 
 PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+
+# Shopify Hydrogen alias to local projects
+alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
+
+# Created by `pipx` on 2025-01-29 06:15:28
+export PATH="$PATH:/Users/yajima/.local/bin"
+export PATH="$PATH:/Users/yajima/Library/pnpm/global/5/node_modules"
+
+# Added by Windsurf
+export PATH="/Users/yajima/.codeium/windsurf/bin:$PATH"
+alias claude="/Users/yajima/.claude/local/claude"
+
+eval "$(starship init zsh)"
