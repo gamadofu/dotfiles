@@ -37,7 +37,7 @@ mise exec -- corepack prepare pnpm@latest --activate
 # 6. Claude Code CLI
 echo "Installing Claude Code CLI..."
 pnpm install -g @anthropic-ai/claude-code
-
+pnpm install -g @openai/codex
 # 7. macOS設定
 defaults write -g com.apple.trackpad.scaling 20
 
