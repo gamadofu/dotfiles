@@ -1,0 +1,49 @@
+[user]
+  name = gamadofu
+  email = mamedrix@gmail.com
+[color]
+  ui = auto
+[alias]
+  st = status
+  sh = show
+  so = remote show origin
+  ft = fetch
+  up = pull --rebase
+  rbm = rebase master
+  ad = add
+  ci = commit
+  cam = commit -a --amend
+  co = checkout
+  # branch
+  b = branch
+  ba = branch -a
+  bm = branch --merged
+  bn = branch --no-merged
+  # log
+  wc = whatchanged
+  ls = log --stat
+  lp = log -p
+  la = log --pretty="format:%ad %h (%an): %s" --date=short
+  lr = log origin
+  oneline = log --pretty=oneline
+  ranking = shortlog -s -n --no-merges
+  log-graph = log --graph --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
+  log-all = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
+  # diff
+  dm = diff master
+  dw = diff --color-words
+  dc = diff --cached
+  ds = diff --staged
+  d1 = diff HEAD~
+  d2 = diff HEAD~~
+  d3 = diff HEAD~~~
+  # conflict
+  edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; nvim `f`"
+  add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+  # grep
+  gr = grep
+  gn = grep -n
+[init]
+  defaultBranch = main
+[pull]
+  rebase = true

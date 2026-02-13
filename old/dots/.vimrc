@@ -1,4 +1,11 @@
 syntax on
+set termguicolors
+set background=dark  
+augroup MyCommentContrast
+  autocmd!
+  autocmd ColorScheme * highlight Comment ctermfg=250 guifg=#A0A0A0 cterm=italic gui=italic
+augroup END
+
 " shell
 set shell=/bin/zsh
 

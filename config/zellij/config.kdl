@@ -1,0 +1,4 @@
+default_shell "zsh"
+theme "catppuccin-mocha"
+copy_on_select true
+default_layout "compact"

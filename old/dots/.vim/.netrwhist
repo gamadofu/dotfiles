@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/Users/yajima/.codex'
+let g:netrw_dirhist_7='/Users/yajima/codes/library-system-oop/tests'
+let g:netrw_dirhist_6='/Users/yajima/codes/mimimo/mimimo-web/app/controllers/api/v1'
+let g:netrw_dirhist_5='/Users/yajima/codes/mimimo/mimimo-web/app/controllers/api'
+let g:netrw_dirhist_4='/Users/yajima/codes/mimimo/mimimo-web/app/controllers'
+let g:netrw_dirhist_3='/Users/yajima/codes/mimimo/mimimo-web/app/controllers/admin'
+let g:netrw_dirhist_2='/Users/yajima/codes/mimimo/mimimo-web/app/controllers'
+let g:netrw_dirhist_1='/Users/yajima/codes/mimimo/mimimo-ansible/inventories/production-asterisk/files/asterisk'
+let g:netrw_dirhist_0='/Users/yajima/codes/mimimo/mimimo-ansible/inventories/production-asterisk/files'
+let g:netrw_dirhist_9='/Users/yajima/codes/mimimo/mimimo-ansible/inventories/production-asterisk'

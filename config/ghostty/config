@@ -1,0 +1,14 @@
+theme = Dracula
+font-size = 17
+font-family = UDEV Gothic
+font-family-bold = UDEV Gothic
+font-family-italic = UDEV Gothic
+font-family-bold-italic = UDEV Gothic
+font-thicken
+background = 000
+background-opacity = 0.70
+macos-titlebar-style = tabs
+macos-icon = custom-style
+macos-icon-ghost-color = 010101
+macos-icon-screen-color = FF88FF
+macos-option-as-alt = left

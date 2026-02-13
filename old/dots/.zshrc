@@ -132,6 +132,11 @@ export PATH="$PATH:/Users/yajima/Library/pnpm/global/5/node_modules"
 
 # Added by Windsurf
 export PATH="/Users/yajima/.codeium/windsurf/bin:$PATH"
-alias claude="/Users/yajima/.claude/local/claude"
+export PATH="$HOME/.claude/local:$PATH"
 
 eval "$(starship init zsh)"
+
+# Added by Antigravity
+export PATH="/Users/yajima/.antigravity/antigravity/bin:$PATH"
+alias vi="nvim"
+alias vim="nvim"
